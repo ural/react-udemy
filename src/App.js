@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Sup from './sup';
 
 class App extends Component {
   render() {
@@ -12,6 +13,10 @@ class App extends Component {
         </header>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
+
+            <Sup name="Bro !!!"> WHAT'S the HELL </Sup>
+            <Sup name="Brothah"> this is coming from this.props.children of sup.js </Sup>
+
         </p>
       </div>
     );
