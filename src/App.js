@@ -42,7 +42,6 @@ class App extends Component {
       backgroundColor: '#478',
       font: "serif",
       fontSize: '14px',
-      fontWeight: 600,
       color: '#efefef',
       padding: '20px 0'
     };
