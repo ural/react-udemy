@@ -1,13 +1,14 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  //font-family: sans-serif;
+  font-family: 'Anonymous Pro', monospace;
 }
 
 .btn-lg {
   padding: 10px 20px;
   margin: 10px 0;
-  background: #d97e00;
+  background: #f09100;
   color: #fff;
   font-size: 14px;
   cursor: pointer;
@@ -17,7 +18,7 @@ body {
   border-radius: 4px;
 }
 .btn-lg:hover {
-  background: #b46400;
+  background: #ffc124;
 }
 .divider {
   display: block;

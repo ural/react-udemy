@@ -1,0 +1,10 @@
+.person {
+  width: 60%;
+  margin: 20px auto 0;
+  padding: 20px;
+  background: #eeeeff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  /* ('inset'- optional) offset-x | offset-y | blur-radius | (spread-radius - optional) | color */
+  box-shadow:  0 3px 4px #eee;
+}

@@ -37,18 +37,25 @@ class App extends Component {
     };
 
   render() {
+
+    const testStyle = {
+      backgroundColor: '#478',
+      font: "serif",
+      fontSize: '14px',
+      fontWeight: 600,
+      color: '#efefef',
+      padding: '20px 0'
+    };
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <div className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-
+        <div className="App-intro" style={testStyle}>
             <Sup name="Bro !!!"> WHAT'S the HELL </Sup>
             <Sup name="Brothah"> this is coming from this.props.children of sup.js </Sup>
-
         </div>
           <hr/>
         <div>
