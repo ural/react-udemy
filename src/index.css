@@ -20,6 +20,9 @@ body {
 .btn-lg:hover {
   background: #ffc124;
 }
+.btn-lg:focus {
+  outline: none;
+}
 .divider {
   display: block;
   width: 50%;
