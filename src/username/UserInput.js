@@ -11,7 +11,7 @@ const UserInput = (props) => {
                 The default username is:  {props.u_name}
             </div>
             <div className="input-fields">
-            <input type="text" value={props.u_name} onChange={props.u_nameChange} defaultValue={props.u_name}/>
+            <input type="text" onChange={props.u_nameChange} defaultValue={props.u_name}/>
 {/*
             <input type="submit" defaultValue="Change User Name" onClick={props.u_nameChange} />
 */}

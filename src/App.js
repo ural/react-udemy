@@ -13,7 +13,8 @@ class App extends Component {
           { name: 'Zoya', age: 22 },
           { name: 'Gop', age: 33 }
       ],
-        testState: "testState Value"
+        testState: "testState Value",
+        showPersons: false
 
     };
 
@@ -37,6 +38,14 @@ class App extends Component {
         });
     };
 
+    togglePersonHandler = () => {
+
+        const dontShow = this.state.showPersons;
+        this.setState({
+            showPersons: !dontShow
+            });
+        };
+
   render() {
 
     const testStyle = {
@@ -46,6 +55,34 @@ class App extends Component {
       color: '#efefef',
       padding: '20px 0'
     };
+
+    let persons = null;
+
+    if (this.state.showPersons) {
+        persons = (
+
+              <div className="personsHolder">
+                  <Person
+                      name={this.state.persons[0].name}
+                      age={this.state.persons[0].age}
+                      changed={this.nameChangedHandler}
+                  />
+                        <span className="divider">
+                            <hr/>
+                        </span>
+                  <Person
+                      clickity={() => this.switchNameHandler('WHO AM I ?')}
+                      name={this.state.persons[1].name}
+                      age={this.state.persons[1].age}
+                  />
+                  <Person
+                      changed={this.nameChangedHandler}
+                      name={this.state.persons[2].name}
+                      age={this.state.persons[2].age}>   {this.state.testState} </Person>
+              </div>
+
+        );
+    }
 
     return (
       <div className="App">
@@ -63,27 +100,11 @@ class App extends Component {
         </div>
 
           <hr/>
-        <div>
-            <button className="btn btn-lg" onClick={() => this.switchNameHandler('Name form Button')} >Switch Name</button>
-            <Person
-                name={this.state.persons[0].name}
-                age={this.state.persons[0].age}
-                changed={this.nameChangedHandler}
-            />
+            <button className="btn btn-lg" onClick={this.togglePersonHandler} >Switch Name</button>
+          {/* toggle Persons*/}
+          { persons }
+          {/* END toggle Persons*/}
 
-            <span className="divider">
-                <hr/>
-            </span>
-            <Person
-               clickity={() => this.switchNameHandler('WHO AM I ?')}
-                name={this.state.persons[1].name}
-                age={this.state.persons[1].age}
-            />
-            <Person
-                changed={this.nameChangedHandler}
-                name={this.state.persons[2].name}
-                age={this.state.persons[2].age} >   {this.state.testState} </Person>
-        </div>
           <hr/>
       </div>
     );

@@ -21,7 +21,9 @@
     padding: 12px 20px;
     border: none;
 }
-.input-fields input[type='text'] {background: #cde;
+.input-fields input[type='text'] {
+    background: #dcedff;
+    border: 1px solid #ccc;
 }
 .input-fields input[type='submit'] {
     background: #f909;
