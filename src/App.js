@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Sup from './sup';
 import Person from './Person/Person';
+import UserOutput from './username/UserOutput';
 
 class App extends Component {
 
@@ -52,10 +53,15 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
+          <UserOutput/>
+
+          <hr/>
+
         <div className="App-intro" style={testStyle}>
-            <Sup name="Bro !!!"> WHAT'S the HELL </Sup>
+            <Sup name="Bro !!!"> WHAT&#39;S the HELL </Sup>
             <Sup name="Brothah"> this is coming from this.props.children of sup.js </Sup>
         </div>
+
           <hr/>
         <div>
             <button className="btn btn-lg" onClick={() => this.switchNameHandler('Name form Button')} >Switch Name</button>
@@ -78,6 +84,7 @@ class App extends Component {
                 name={this.state.persons[2].name}
                 age={this.state.persons[2].age} >   {this.state.testState} </Person>
         </div>
+          <hr/>
       </div>
     );
   }

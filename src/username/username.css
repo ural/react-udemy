@@ -1,0 +1,29 @@
+.u-name_container p {
+    background: #eeeeee;
+    border: 1px solid #dedede;
+    box-shadow: 0 1px 10px #dfdfdf;
+    width: 80%;
+    margin: 10px auto 20px;
+    padding: 20px;
+}
+
+.input-fields {
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 55%;
+    margin: 0 auto;
+}
+.input-fields input {
+    text-align: center;
+    padding: 12px 20px;
+    border: none;
+}
+.input-fields input[type='text'] {background: #cde;
+}
+.input-fields input[type='submit'] {
+    background: #f909;
+    cursor: pointer;
+}
