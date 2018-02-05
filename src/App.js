@@ -18,6 +18,7 @@ class App extends Component {
 
     };
 
+/*
     switchNameHandler = (newName) => {
         this.setState({
             persons: [
@@ -27,6 +28,7 @@ class App extends Component {
             ]
         });
     };
+*/
 
     nameChangedHandler = (event) => {
         this.setState({
@@ -36,6 +38,12 @@ class App extends Component {
                 { name: event.target.value, age: 53 }
             ]
         });
+    };
+
+    deletePersonHandler = (personIndex) => {
+      const deletePersons = this.state.persons;
+      deletePersons.splice(personIndex, 1);
+      this.setState({ persons: deletePersons });
     };
 
     togglePersonHandler = () => {
@@ -61,38 +69,15 @@ class App extends Component {
     if (this.state.showPersons) {
         persons = (
             <div className="personsHolder">
-              {
-                this.state.persons.map(person => {
+              {this.state.persons.map((person, index) => {
                   return <Person
+                    clickity={() => this.deletePersonHandler(index)}
                     key={person.name}
                     name={person.name}
                     age={person.age}
                   />
-                })
-              }
+                })}
             </div>
-/*
-              <div className="personsHolder">
-                  <Person
-                      name={this.state.persons[0].name}
-                      age={this.state.persons[0].age}
-                      changed={this.nameChangedHandler}
-                  />
-                        <span className="divider">
-                            <hr/>
-                        </span>
-                  <Person
-                      clickity={() => this.switchNameHandler('WHO AM I ?')}
-                      name={this.state.persons[1].name}
-                      age={this.state.persons[1].age}
-                  />
-                  <Person
-                      changed={this.nameChangedHandler}
-                      name={this.state.persons[2].name}
-                      age={this.state.persons[2].age}>   {this.state.testState} </Person>
-              </div>
-*/
-
         );
     }
 
