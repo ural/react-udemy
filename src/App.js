@@ -9,9 +9,9 @@ class App extends Component {
 
     state = {
       persons: [
-          { name: 'Партнер', age: 'ОГО-ГО...' },
-          { name: 'Zoya', age: 22 },
-          { name: 'Gop', age: 33 }
+          {id: 'odin', name: 'Партнер', age: 'ОГО-ГО...' },
+          {id: 'dva', name: 'Zoya', age: 22 },
+          {id: 'tri', name: 'Gop', age: 33 }
       ],
         testState: "testState Value",
         showPersons: false
@@ -30,7 +30,15 @@ class App extends Component {
     };
 */
 
-    nameChangedHandler = (event) => {
+    nameChangedHandler = (event, id) => {
+
+      const personIndex = this.state.persons.findIndex(p => {
+        return p.id === id;
+      });
+
+
+
+/*
         this.setState({
             persons: [
                 { name: event.target.value, age: 993  },
@@ -38,10 +46,12 @@ class App extends Component {
                 { name: event.target.value, age: 53 }
             ]
         });
+*/
     };
 
     deletePersonHandler = (personIndex) => {
-      const deletePersons = this.state.persons;
+      //const deletePersons = this.state.persons.slice();
+      const deletePersons = [...this.state.persons];
       deletePersons.splice(personIndex, 1);
       this.setState({ persons: deletePersons });
     };
@@ -72,9 +82,10 @@ class App extends Component {
               {this.state.persons.map((person, index) => {
                   return <Person
                     clickity={() => this.deletePersonHandler(index)}
-                    key={person.name}
+                    key={person.id}
                     name={person.name}
                     age={person.age}
+                    changed={(event) => this.nameChangedHandler(event, person.id)}
                   />
                 })}
             </div>
