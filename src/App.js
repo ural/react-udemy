@@ -18,25 +18,25 @@ class App extends Component {
 
     };
 
-/*
-    switchNameHandler = (newName) => {
-        this.setState({
-            persons: [
-                { name: newName, age: 12 },
-                { name: 'switch name = ZOJKA', age: 12 },
-                { name: 'switch name = GOPniK', age: 53 }
-            ]
-        });
-    };
-*/
-
     nameChangedHandler = (event, id) => {
-
+    // get the index of modified person
       const personIndex = this.state.persons.findIndex(p => {
         return p.id === id;
       });
+    // create a copy of global persons object and assign it to reference object
+      const person = {
+          ...this.state.persons[personIndex]
+      };
+    // ^^ assign name value to person object above, the value is from input field
+        person.name = event.target.value;
+    // create copy of global persons object
+        const personsCopy = [...this.state.persons];
+    // and assign to selected person its new name
+        personsCopy[personIndex] = person;
 
-
+        this.setState({
+            persons: personsCopy
+        });
 
 /*
         this.setState({
