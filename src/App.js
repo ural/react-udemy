@@ -108,7 +108,7 @@ class App extends Component {
         </div>
 
           <hr/>
-            <button className="btn btn-lg" onClick={this.togglePersonHandler} >Switch Name</button>
+            <button className="btn btn-lg" onClick={this.togglePersonHandler} >Show Hide</button>
           {/* toggle Persons*/}
           { persons }
           {/* END toggle Persons*/}
