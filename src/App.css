@@ -1,5 +1,21 @@
+@font-face {
+  font-family: "Anonymous Pro", sans-serif;
+  src: url("fonts/anonymous_pro-webfont.woff") format("woff");
+  src: url("fonts/anonymous_pro-webfont.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: 'Source Code Pro', sans-serif;
+  src: url("fonts/SourceCodePro-Light.otf") format("otf");
+  /*
+  font-style: normal;
+  font-weight: normal;
+  */
+}
 .App {
   text-align: center;
+ /* font-family: "Anonymous Pro", sans-serif;*/
+  font-family: "Source Code Pro", sans-serif;
 }
 
 .App-logo {
@@ -27,7 +43,7 @@
   to { transform: rotate(360deg); }
 }
 .red {
-  font-size: 18px;
+  font-size: 2rem;
 }
 .black {
   color: #fff;

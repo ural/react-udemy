@@ -11,7 +11,8 @@ class App extends Component {
       persons: [
           {id: 'odin', name: 'Партнер', age: 'ОГО-ГО...' },
           {id: 'dva', name: 'Zoya', age: 22 },
-          {id: 'tri', name: 'Gop', age: 33 }
+          {id: 'tri', name: 'Gop', age: 33 },
+          {id: 'Последний', name: 'Герой', age: 48 }
       ],
         testState: "testState Value",
         showPersons: false
@@ -100,8 +101,7 @@ class App extends Component {
             </div>
         );
         btnStyle.backgroundColor = '#09f';
-        testStyle.backgroundColor = '#f09100';
-        testStyle.fontSize = '18px';
+        testStyle.fontSize = '0.5rem';
 
     }// end if showPersons
 
