@@ -74,7 +74,16 @@ class App extends Component {
       padding: '20px 0'
     };
 
-    let persons = null;
+      const btnStyle = {
+          backgroundColor: '#f09100',
+          font: "serif",
+          fontSize: '14px',
+          color: '#efefef',
+          padding: '20px 40px'
+      };
+
+
+      let persons = null;
 
     if (this.state.showPersons) {
         persons = (
@@ -90,7 +99,11 @@ class App extends Component {
                 })}
             </div>
         );
-    }
+        btnStyle.backgroundColor = '#09f';
+        testStyle.backgroundColor = '#f09100';
+        testStyle.fontSize = '18px';
+
+    }// end if showPersons
 
     return (
       <div className="App">
@@ -108,7 +121,7 @@ class App extends Component {
         </div>
 
           <hr/>
-            <button className="btn btn-lg" onClick={this.togglePersonHandler} >Show Hide</button>
+            <button className="btn btn-lg" onClick={this.togglePersonHandler}  style={btnStyle}>Show Hide</button>
           {/* toggle Persons*/}
           { persons }
           {/* END toggle Persons*/}
