@@ -110,8 +110,13 @@ class App extends Component {
       if (this.state.persons.length || this.state.persons.length === 0) {
          classNames.push('red');
       }
+/*
       if (this.state.persons.length <= 2) {
           classNames.push('black');
+      }
+*/
+      if (this.state.persons.length <= 2) {
+          classNames.shift('black');
       }
       if (!this.state.showPersons) {
           classNames.pop();
