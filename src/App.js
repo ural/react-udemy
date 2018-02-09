@@ -105,13 +105,22 @@ class App extends Component {
 
     }// end if showPersons
 
-      let classNames = ['red', 'black'].join(' ');
 
-    return (
+      let classNames = [];
+      if (this.state.persons.length || this.state.persons.length === 0) {
+         classNames.push('red');
+      }
+      if (this.state.persons.length <= 2) {
+          classNames.push('black');
+      }
+      if (!this.state.showPersons) {
+          classNames.pop();
+      }
+  return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className={classNames}>Welcome to React</h1>
+          <h1 className={classNames.join(' ')}>Welcome to React</h1>
         </header>
           <UserOutput/>
 
