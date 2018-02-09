@@ -105,11 +105,13 @@ class App extends Component {
 
     }// end if showPersons
 
+      let classNames = ['red', 'black'].join(' ');
+
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className={classNames}>Welcome to React</h1>
         </header>
           <UserOutput/>
 
