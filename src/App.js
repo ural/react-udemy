@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 //import Radium, { StyleRoot } from 'radium';
 
+import appStyles from './App.css';
 import logo from './logo.svg';
-import './App.css';
+
 import Sup from './sup';
 import Person from './Person/Person';
 import UserOutput from './username/UserOutput';
@@ -92,10 +93,6 @@ class App extends Component {
             </div>
         );
         btnStyle.backgroundColor = '#09f';
-        btnStyle[':hover'] = {
-            backgroundColor: 'lightgreen',
-            color: 'red'
-        };
         testStyle.fontSize = '0.5rem';
 
 
@@ -104,10 +101,12 @@ class App extends Component {
     // Dynamic Styles
       let classNames = [];
       if (this.state.persons.length || this.state.persons.length === 0) {
-         classNames.push('red');
+         /*classNames.push('red');*/
+         classNames.push(appStyles.red);
       }
       if (this.state.persons.length <= 2) {
-          classNames.push('black');
+          /*classNames.push('black');*/
+          classNames.push(appStyles.black);
       }
       if (!this.state.showPersons) {
           classNames.shift();
@@ -118,27 +117,27 @@ class App extends Component {
   return (
       // Radium Staff /*<StyleRoot>*/
 
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <div className={appStyles.App} id="App_main_wrap">
+        <header className={appStyles.App_header}>
+          <img src={logo} className={appStyles["App-logo"]} alt="logo" />
           <h1 className={classNames.join(' ')}>Welcome to React</h1>
         </header>
           <UserOutput/>
           <hr/>
-        <div className="App-intro" style={testStyle}>
+        <div className={appStyles["App-intro"]} style={testStyle}>
             <Sup name="Bro !!!"> WHAT&#39;S the HELL </Sup>
             <Sup name="Brothah"> this is coming from this.props.children of sup.js </Sup>
         </div>
           <hr/>
-            <button className="btn btn-lg" onClick={this.togglePersonHandler}  style={btnStyle}>Show Hide</button>
+            <button className={appStyles["ma-btn-lg"]} onClick={this.togglePersonHandler}  style={btnStyle}>Show Hide</button>
           {/* toggle Persons*/}
           { persons }
           {/* END toggle Persons*/}
           <hr/>
-          {/*//footer*/}
-          <div className="footer">
+          {/* footer* */}
+          <div className={appStyles.footer}>
               <hr />
-              <p> FOOTER </p>
+              <p className={appStyles.red}> FOOTER </p>
           </div>
       </div>
 

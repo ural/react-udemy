@@ -2,6 +2,8 @@ import React from 'react';
 import UserInput from './UserInput';
 import './username.css';
 
+/*import appStyles from './App.css';*/
+
 class UserOutput extends React.Component {
 
     state = {
@@ -20,9 +22,9 @@ class UserOutput extends React.Component {
 
     render () {
         return (
-            <div className="u-name_container">
+            <em className="u-name_container">
                 <UserInput u_nameChange={this.changeU_name} u_name={this.state.usernames[0].uname1}/>
-            </div>
+            </em>
         );
     }
 }
