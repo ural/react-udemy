@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+//import Radium, { StyleRoot } from 'radium';
+
 import logo from './logo.svg';
 import './App.css';
 import Sup from './sup';
@@ -38,16 +40,6 @@ class App extends Component {
         this.setState({
             persons: personsCopy
         });
-
-/*
-        this.setState({
-            persons: [
-                { name: event.target.value, age: 993  },
-                { name: 'onChange name = Default Name', age: 12 },
-                { name: event.target.value, age: 53 }
-            ]
-        });
-*/
     };
 
     deletePersonHandler = (personIndex) => {
@@ -69,7 +61,7 @@ class App extends Component {
 
     const testStyle = {
       backgroundColor: '#478',
-      font: "serif",
+      Font: "serif",
       fontSize: '14px',
       color: '#efefef',
       padding: '20px 0'
@@ -77,12 +69,11 @@ class App extends Component {
 
       const btnStyle = {
           backgroundColor: '#f09100',
-          font: "serif",
+          Font: "serif",
           fontSize: '14px',
           color: '#efefef',
           padding: '20px 40px'
       };
-
 
       let persons = null;
 
@@ -101,11 +92,16 @@ class App extends Component {
             </div>
         );
         btnStyle.backgroundColor = '#09f';
+        btnStyle[':hover'] = {
+            backgroundColor: 'lightgreen',
+            color: 'red'
+        };
         testStyle.fontSize = '0.5rem';
+
 
     }// end if showPersons
 
-
+    // Dynamic Styles
       let classNames = [];
       if (this.state.persons.length || this.state.persons.length === 0) {
          classNames.push('red');
@@ -113,37 +109,40 @@ class App extends Component {
       if (this.state.persons.length <= 2) {
           classNames.push('black');
       }
-/*
-      if (this.state.persons.length <= 2) {
-          classNames.unshift('black');
-      }
-*/
       if (!this.state.showPersons) {
           classNames.shift();
       }
+       // END Dynamic Styles
+
+
   return (
+      // Radium Staff /*<StyleRoot>*/
+
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className={classNames.join(' ')}>Welcome to React</h1>
         </header>
           <UserOutput/>
-
           <hr/>
-
         <div className="App-intro" style={testStyle}>
             <Sup name="Bro !!!"> WHAT&#39;S the HELL </Sup>
             <Sup name="Brothah"> this is coming from this.props.children of sup.js </Sup>
         </div>
-
           <hr/>
             <button className="btn btn-lg" onClick={this.togglePersonHandler}  style={btnStyle}>Show Hide</button>
           {/* toggle Persons*/}
           { persons }
           {/* END toggle Persons*/}
-
           <hr/>
+          {/*//footer*/}
+          <div className="footer">
+              <hr />
+              <p> FOOTER </p>
+          </div>
       </div>
+
+      // Radium Staff /*</StyleRoot>*/
     );
   }
 }
