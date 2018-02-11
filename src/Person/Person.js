@@ -6,10 +6,12 @@ const Person = (props) => {
 
 
     const randomN = Math.round(Math.random() * 10);
+/*
     if (randomN > 7 ) {
         console.log(randomN);
         throw new Error("What's going ON?????");
     }
+*/
 
     return (
         <div className="person">

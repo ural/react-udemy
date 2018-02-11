@@ -7,6 +7,7 @@ import logo from './logo.svg';
 import Sup from './sup';
 import Person from './Person/Person';
 import UserOutput from './username/UserOutput';
+//import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
 
