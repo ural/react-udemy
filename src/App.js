@@ -113,7 +113,6 @@ class App extends Component {
       }
        // END Dynamic Styles
 
-
   return (
       // Radium Staff /*<StyleRoot>*/
 
@@ -137,7 +136,7 @@ class App extends Component {
           {/* footer* */}
           <div className={appStyles.footer}>
               <hr />
-              <p className={appStyles.red}> FOOTER </p>
+              <p className={appStyles.black}> FOOTER </p>
           </div>
       </div>
 

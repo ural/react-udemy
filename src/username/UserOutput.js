@@ -22,9 +22,9 @@ class UserOutput extends React.Component {
 
     render () {
         return (
-            <em className="u-name_container">
+            <div className="u-name_container">
                 <UserInput u_nameChange={this.changeU_name} u_name={this.state.usernames[0].uname1}/>
-            </em>
+            </div>
         );
     }
 }

@@ -1,14 +1,15 @@
-.u-name_container p {
-    font-size: 0.5rem;
+:global .u-name_container p {
+    font-size: 0.8rem;
     background: #eeeeee;
     border: 1px solid #dedede;
     box-shadow: 0 1px 10px #dfdfdf;
     width: 80%;
     margin: 10px auto 20px;
     padding: 20px;
+    font-family: "Source Code Pro", sans-serif;
 }
 
-.input-fields {
+:global .input-fields {
     height: auto;
     padding: 20px;
     display: flex;
@@ -17,16 +18,16 @@
     width: 55%;
     margin: 0 auto;
 }
-.input-fields input {
+:global .input-fields input {
     text-align: center;
     padding: 12px 20px;
     border: none;
 }
-.input-fields input[type='text'] {
+:global .input-fields input[type='text'] {
     background: #dcedff;
     border: 1px solid #ccc;
 }
-.input-fields input[type='submit'] {
+:global .input-fields input[type='submit'] {
     background: #f909;
     cursor: pointer;
 }

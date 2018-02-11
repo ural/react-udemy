@@ -1,4 +1,4 @@
-.person {
+:global .person {
   width: 60%;
   margin: 20px auto 0;
   padding: 20px;
@@ -9,7 +9,7 @@
 }
 
 @media all and (max-width: 768px) {
-  .person {
+  :global .person {
     background: #00aaff;
   }
 }
