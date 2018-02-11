@@ -81,7 +81,7 @@ class App extends Component {
 
     if (this.state.showPersons) {
         persons = (
-            <div className="personsHolder">
+            <div className={appStyles.personsHolder}>
               {this.state.persons.map((person, index) => {
                   return <Person
                     clickity={() => this.deletePersonHandler(index)}
@@ -101,17 +101,26 @@ class App extends Component {
 
     // Dynamic Styles
       let classNames = [];
+
+    classNames.push('loadED');
+
+      window.onload = () => {
+        console.log("load event detected!");
+      };
+
       if (this.state.persons.length || this.state.persons.length === 0) {
-         /*classNames.push('red');*/
-         classNames.push(appStyles.red);
+         classNames.push('red');
+        /* classNames.push(appStyles.red);*/
       }
       if (this.state.persons.length <= 2) {
-          /*classNames.push('black');*/
-          classNames.push(appStyles.black);
+          classNames.push('black');
+          /*classNames.push(appStyles.black);*/
       }
       if (!this.state.showPersons) {
-          classNames.shift();
+          classNames.pop();
       }
+      let classNamesCopy = [...classNames];
+
        // END Dynamic Styles
 
   return (
@@ -122,6 +131,14 @@ class App extends Component {
           <img src={logo} className={appStyles["App-logo"]} alt="logo" />
           <h1 className={classNames.join(' ')}>Welcome to React</h1>
         </header>
+        {/* END HEADER  */}
+
+        {/* TEST SECTION */}
+        <div className="test-section">
+        {classNamesCopy.join(', ')}
+        </div>
+        {/* end TEST SECTION */}
+        <div className={appStyles["main-content-wrap"]}>
           <UserOutput/>
           <hr/>
         <div className={appStyles["App-intro"]} style={testStyle}>
@@ -133,11 +150,12 @@ class App extends Component {
           {/* toggle Persons*/}
           { persons }
           {/* END toggle Persons*/}
-          <hr/>
+
+        </div> {/* END main-content-main */}
+
           {/* footer* */}
           <div className={appStyles.footer}>
-              <hr />
-              <p className={appStyles.black}> FOOTER </p>
+              <p className={classNames[2]}> FOOTER </p>
           </div>
       </div>
 
