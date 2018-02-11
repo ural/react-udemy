@@ -14,3 +14,6 @@
   border: none;
   border-radius: 5px;
 }
+:global .loadED {
+  color: orange;
+}

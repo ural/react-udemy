@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 //import Radium, { StyleRoot } from 'radium';
 
 import appStyles from './App.css';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 
-import Sup from './sup';
-import Person from './Person/Person';
-import UserOutput from './username/UserOutput';
+import Sup from '../sup';
+import Person from '../components/Person/Person';
+import UserOutput from '../components/username/UserOutput';
 //import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
 
 class App extends Component {
@@ -102,12 +102,6 @@ class App extends Component {
     // Dynamic Styles
       let classNames = [];
 
-    classNames.push('loadED');
-
-      window.onload = () => {
-        console.log("load event detected!");
-      };
-
       if (this.state.persons.length || this.state.persons.length === 0) {
          classNames.push('red');
         /* classNames.push(appStyles.red);*/
@@ -119,7 +113,6 @@ class App extends Component {
       if (!this.state.showPersons) {
           classNames.pop();
       }
-      let classNamesCopy = [...classNames];
 
        // END Dynamic Styles
 
@@ -132,12 +125,6 @@ class App extends Component {
           <h1 className={classNames.join(' ')}>Welcome to React</h1>
         </header>
         {/* END HEADER  */}
-
-        {/* TEST SECTION */}
-        <div className="test-section">
-        {classNamesCopy.join(', ')}
-        </div>
-        {/* end TEST SECTION */}
         <div className={appStyles["main-content-wrap"]}>
           <UserOutput/>
           <hr/>
@@ -155,7 +142,7 @@ class App extends Component {
 
           {/* footer* */}
           <div className={appStyles.footer}>
-              <p className={classNames[2]}> FOOTER </p>
+              <p className={classNames[1]}> FOOTER </p>
           </div>
       </div>
 
