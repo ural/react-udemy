@@ -33,6 +33,7 @@ const cockpit = (props) => {
 
     <div className={cockStyles.Cockpit}>
       <h2 className={classNames.join(' ')}>Toggle who&#39;s there ...</h2>
+      <h3>{ props.appTitle }</h3>
       <button className={cockStyles["ma-btn-lg"]}
         onClick={props.clicked}
         style={btnStyle}

@@ -5,7 +5,7 @@ import Sup from '../sup';
 import Persons from '../components/Persons/persons';
 import UserOutput from '../components/username/UserOutput';
 //import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
-import Cockpit from '../components/Cockpit/Cockpit';
+import Cock from '../components/Cockpit/Cockpit';
 
 import appStyles from './App.css';
 import logo from '../logo.svg';
@@ -108,9 +108,10 @@ class App extends Component {
           </div>
           <hr/>
           {/* toggle Persons*/}
-          <Cockpit showPersons={this.state.showPersons}
+          <Cock showPersons={this.state.showPersons}
                    persons={this.state.persons}
                    clicked={this.togglePersonHandler}
+                   appTitle={this.props.title}
           />
           {/* END toggle Persons*/}
 
