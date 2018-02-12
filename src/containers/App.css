@@ -48,3 +48,7 @@
 .footer p {
   margin: 0;
 }
+.persons_Holder {
+  border: 1px solid #00ff00;
+  background: #888888;
+}

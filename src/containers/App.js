@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 //import Radium, { StyleRoot } from 'radium';
 
-import appStyles from './App.css';
-import logo from '../logo.svg';
-
 import Sup from '../sup';
-import Person from '../components/Person/Person';
+import Persons from '../components/Persons/persons';
 import UserOutput from '../components/username/UserOutput';
 //import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Cockpit from '../components/Cockpit/Cockpit';
+
+import appStyles from './App.css';
+import logo from '../logo.svg';
 
 class App extends Component {
 
@@ -77,42 +78,23 @@ class App extends Component {
           padding: '20px 40px'
       };
 
-      let persons = null;
-
+    let persons = null;
     if (this.state.showPersons) {
+
         persons = (
-            <div className={appStyles.personsHolder}>
-              {this.state.persons.map((person, index) => {
-                  return <Person
-                    clickity={() => this.deletePersonHandler(index)}
-                    key={person.id}
-                    name={person.name}
-                    age={person.age}
-                    changed={(event) => this.nameChangedHandler(event, person.id)}
-                  />
-                })}
+            <div className={appStyles.persons_Holder}>
+                <Persons
+                persons={this.state.persons}
+                clicked={this.deletePersonHandler}
+                changed={this.nameChangedHandler}
+                />
             </div>
         );
+
         btnStyle.backgroundColor = '#09f';
         testStyle.fontSize = '0.5rem';
 
-
     }// end if showPersons
-
-    // Dynamic Styles
-      let classNames = [];
-
-      if (this.state.persons.length || this.state.persons.length === 0) {
-         classNames.push('red');
-        /* classNames.push(appStyles.red);*/
-      }
-      if (this.state.persons.length <= 2) {
-          classNames.push('black');
-          /*classNames.push(appStyles.black);*/
-      }
-      if (!this.state.showPersons) {
-          classNames.pop();
-      }
 
        // END Dynamic Styles
 
@@ -122,7 +104,7 @@ class App extends Component {
       <div className={appStyles.App} id="App_main_wrap">
         <header className={appStyles.App_header}>
           <img src={logo} className={appStyles["App-logo"]} alt="logo" />
-          <h1 className={classNames.join(' ')}>Welcome to React</h1>
+          <h1 className="Title">Welcome to React</h1>
         </header>
         {/* END HEADER  */}
         <div className={appStyles["main-content-wrap"]}>
@@ -133,16 +115,20 @@ class App extends Component {
             <Sup name="Brothah"> this is coming from this.props.children of sup.js </Sup>
         </div>
           <hr/>
-            <button className={appStyles["ma-btn-lg"]} onClick={this.togglePersonHandler}  style={btnStyle}>Show Hide</button>
           {/* toggle Persons*/}
-          { persons }
+            <Cockpit showPersons={this.state.showPersons}
+              persons={this.state.persons}
+              clicked={this.togglePersonHandler}
+            />
           {/* END toggle Persons*/}
+
+          { persons }
 
         </div> {/* END main-content-main */}
 
           {/* footer* */}
           <div className={appStyles.footer}>
-              <p className={classNames[1]}> FOOTER </p>
+              <p className="para"> FOOTER </p>
           </div>
       </div>
 
