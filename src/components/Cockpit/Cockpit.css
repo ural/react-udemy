@@ -1,0 +1,29 @@
+@import url('../../css/custom.css');
+
+.main-content-wrap {
+
+}
+.persons_Holder {
+  border: 1px solid #00ff00;
+  background: #888888;
+}
+
+.Cockpit .red {
+  font-size: 2rem;
+  color: #ff2d4c;
+}
+.Cockpit .red:after {
+  display: block;
+  content: 'WHAT THE .....'
+}
+.Cockpit .black {
+  text-shadow: 1px 2px 15px #ccc, 1px 2px 1px #0f0;;
+}
+
+.Cockpit .ma-btn-lg {
+  border: none;
+  border-radius: 5px;
+}
+.Cockpit .loadED {
+  color: orange;
+}
