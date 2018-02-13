@@ -4,9 +4,16 @@ import cockStyles from './Cockpit.css';
 
 const cockpit = (props) => {
 
+  const btnStyle = {
+    backgroundColor: '#f09100',
+    Font: "serif",
+    fontSize: '14px',
+    color: '#efefef',
+    padding: '20px 40px'
+  };
+
   // Dynamic Styles
   let classNames = [];
-
   classNames.push(cockStyles.loadED);
 
   //let btnClass = '';
@@ -20,20 +27,13 @@ const cockpit = (props) => {
   }
   if (!props.showPersons) {
     classNames.shift();
+    btnStyle.backgroundColor = '#09f';
   }
-    const btnStyle = {
-        backgroundColor: '#f09100',
-        Font: "serif",
-        fontSize: '14px',
-        color: '#efefef',
-        padding: '20px 40px'
-    };
 
     return (
 
     <div className={cockStyles.Cockpit}>
       <h2 className={classNames.join(' ')}>Toggle who&#39;s there ...</h2>
-      <h3>{ props.appTitle }</h3>
       <button className={cockStyles["ma-btn-lg"]}
         onClick={props.clicked}
         style={btnStyle}

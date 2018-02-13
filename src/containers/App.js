@@ -12,6 +12,18 @@ import logo from '../logo.svg';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props);
+    console.log("[App.js] Inside Constructor ", props);
+  }
+  componentWillMount() {
+    console.log("[App.js] Inside ComponentWillMount()");
+  }
+
+  componentDidMount() {
+    console.log("[App.js] from inside componentDIDMout()");
+  }
+
   state = {
     persons: [
       {id: 'odin', name: 'Партнер', age: 'ОГО-ГО...'},
@@ -39,6 +51,8 @@ class App extends Component {
     const personsCopy = [...this.state.persons];
     // and assign to selected person its new name
     personsCopy[personIndex] = person;
+
+    person.age = person.age + 1;
 
     this.setState({
       persons: personsCopy
@@ -79,6 +93,7 @@ class App extends Component {
             persons={this.state.persons}
             clicked={this.deletePersonHandler}
             changed={this.nameChangedHandler}
+
           />
         </div>
       );
@@ -111,7 +126,6 @@ class App extends Component {
           <Cock showPersons={this.state.showPersons}
                    persons={this.state.persons}
                    clicked={this.togglePersonHandler}
-                   appTitle={this.props.title}
           />
           {/* END toggle Persons*/}
 
