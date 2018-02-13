@@ -126,6 +126,7 @@ class App extends Component {
           <Cock showPersons={this.state.showPersons}
                    persons={this.state.persons}
                    clicked={this.togglePersonHandler}
+                   appTitle={this.props.title}
           />
           {/* END toggle Persons*/}
 

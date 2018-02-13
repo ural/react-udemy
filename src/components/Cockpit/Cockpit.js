@@ -38,6 +38,7 @@ const cockpit = (props) => {
         onClick={props.clicked}>
         Show Hide
       </button>
+      <h3>{props.appTitle}</h3>
       <p style={btnStyle}>btnStyle from Cockpit.js | <strong>classNames {classNames} </strong></p>
     </div>
   );
