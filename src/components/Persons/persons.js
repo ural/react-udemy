@@ -14,6 +14,20 @@ class Persons extends React.Component {
   componentDidMount() {
     console.log("[Persons.js] from inside componentDIDMout()");
   }
+// component update
+  componentWillReceiveProps(nextProps) {
+    console.log("[UPDATE Persons.js  !!!");
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("[ UPDATE Persons.js ] shouldComponentUpd ?  ", nextProps);
+    return nextProps.persons !== this.props.persons;
+  }
+  componentWillUpdate(nextProps, nextState) {
+    console.log("[ UPDATE !!!] from componentWILLup", nextProps, nextState);
+  }
+  componentDidUpdate() {
+    console.log("[ UPDATE !!! ] component DID mount ");
+  }
 
   render () {
     console.log("[Persons.js] inside render()  ", this.props);
