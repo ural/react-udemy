@@ -16,17 +16,17 @@ class Persons extends React.Component {
   }
 // component update
   componentWillReceiveProps(nextProps) {
-    console.log("[UPDATE Persons.js  !!!");
+    console.log("[UPDATE Persons.js  !!! componentWillReceiveProps", nextProps);
   }
   shouldComponentUpdate(nextProps, nextState) {
-    console.log("[ UPDATE Persons.js ] shouldComponentUpd ?  ", nextProps);
+    //console.log("[ UPDATE Persons.js ] shouldComponentUpd ?  ");
     return nextProps.persons !== this.props.persons;
   }
   componentWillUpdate(nextProps, nextState) {
-    console.log("[ UPDATE !!!] from componentWILLup", nextProps, nextState);
+    //console.log("[ UPDATE !!!] from componentWILLup", nextProps, nextState);
   }
   componentDidUpdate() {
-    console.log("[ UPDATE !!! ] component DID mount ");
+    console.log("[ UPDATE !!! ] component DID UPdate ");
   }
 
   render () {

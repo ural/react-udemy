@@ -39,7 +39,7 @@ const cockpit = (props) => {
         Show Hide
       </button>
       <h3>{props.appTitle}</h3>
-      <p style={btnStyle}>btnStyle from Cockpit.js | <strong>classNames {classNames} </strong></p>
+      <p style={btnStyle}>btnStyle from Cockpit.js | <strong>classNames {classNames.join(' ')} </strong></p>
     </div>
   );
 };

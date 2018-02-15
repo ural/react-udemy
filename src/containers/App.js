@@ -23,6 +23,19 @@ class App extends Component {
   componentDidMount() {
     console.log("[App.js] from inside componentDIDMout()");
   }
+// UPDATES
+/*
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log("[ App.js Persons.js ] shouldComponentUpd ?  ");
+    return nextProps.persons !== this.props.persons;
+  }
+*/
+  componentWillUpdate(nextProps, nextState) {
+    console.log("[ App.js !!!] from componentWILLup", nextProps, nextState);
+  }
+  componentDidUpdate(nextProps) {
+    console.log("[ App.js !!! ] component DID UPdate ", nextProps);
+  }
 
   state = {
     persons: [
