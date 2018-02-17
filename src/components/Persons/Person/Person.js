@@ -9,6 +9,7 @@ class Person extends React.Component {
     super(props);
     console.log("[Persons_SINGULARjs] Inside Constructor ", props);
   }
+/*
   componentWillMount() {
     console.log("[Persons_SINGULARjs] Inside ComponentWillMount()");
   }
@@ -16,9 +17,12 @@ class Person extends React.Component {
   componentDidMount() {
     console.log("[Persons_SINGULARjs] from inside componentDIDMout()");
   }
+*/
 
   render () {
+/*
     console.log("[Persons_SINGULARjs] inside render()  ", this.props);
+*/
      // const randomN = Math.round(Math.random() * 10);
       return (
         <div className="person">

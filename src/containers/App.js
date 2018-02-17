@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 //import Radium, { StyleRoot } from 'radium';
 
 import Sup from '../sup';
@@ -10,7 +10,7 @@ import Cock from '../components/Cockpit/Cockpit';
 import appStyles from './App.css';
 import logo from '../logo.svg';
 
-class App extends Component {
+class App extends React.PureComponent {
 
   constructor(props) {
     super(props);
@@ -27,15 +27,19 @@ class App extends Component {
 /*
   shouldComponentUpdate(nextProps, nextState) {
     console.log("[ App.js Persons.js ] shouldComponentUpd ?  ");
-    return nextProps.persons !== this.props.persons;
+    return nextProps.persons !== this.props.persons ||
+      nextState.showPersons !== this.state.showPersons;
+   // return true;
   }
 */
+/*
   componentWillUpdate(nextProps, nextState) {
     console.log("[ App.js !!!] from componentWILLup", nextProps, nextState);
   }
   componentDidUpdate(nextProps) {
     console.log("[ App.js !!! ] component DID UPdate ", nextProps);
   }
+*/
 
   state = {
     persons: [
@@ -136,6 +140,11 @@ class App extends Component {
           </div>
           <hr/>
           {/* toggle Persons*/}
+          <div className="btnHolder">
+
+            <button onClick={() => {this.setState({showPersons: true})}}>Show Them !!</button>
+
+          </div>
           <Cock showPersons={this.state.showPersons}
                    persons={this.state.persons}
                    clicked={this.togglePersonHandler}
